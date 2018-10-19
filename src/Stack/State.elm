@@ -18,7 +18,7 @@ removeLikedGifs : List (Gif.Types.Model) -> Model -> Model
 removeLikedGifs likedGifs gifs =
   let
     idsList =
-      List.map (\gif -> gif.id) likedGifs
+      List.map .id likedGifs
 
     filteredList =
       List.filter (\item -> not (List.member item.gif.id idsList)) gifs
